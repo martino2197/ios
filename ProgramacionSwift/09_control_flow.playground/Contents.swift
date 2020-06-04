@@ -183,3 +183,76 @@ case (let distance, 0), (0, let distance):
 default:
     print("No esta sobre el eje")
 }
+
+
+
+///SENTENCIAS DE TRANSFERENCIA DE CONTROL - continue, break, fallthrough, return, throw
+
+//Continue y break
+let sentence = "Las mentes grandes piensan igual"
+var filteredSentence = ""
+let charactersToRemove:[Character] = ["a", "e", "i", "o","u"]
+for ch in sentence{
+    if charactersToRemove.contains(ch){
+        continue //finaliza la ejecuccion actual para ir a la sig. iteracion
+    }
+    filteredSentence.append(ch)
+    if ch == "d"{
+        break //rompe la ejecucion de un bucle
+    }
+}
+filteredSentence
+
+
+
+//Fallthrough (Pasar hacia adelante), Se suele utilizar unicamente en el contexto del switch
+let integerToDescribe = 5
+var description = "El numero \(integerToDescribe) es"
+switch integerToDescribe {
+case 2,3,5,7,11,13,17,19:
+    description += " un numero primo y"
+    fallthrough
+default:
+    description += " un numero entero"
+}
+print(description)
+
+
+
+//Uso de return y guard: forma de evitar recibir algo que no exites o que es nil
+var people = ["name": "Juan Gabriel", "age": 31, "isMale": true] as [String : Any]
+
+//let surname = people["surname"]
+if let surname = people["surname"]{
+    print(surname)
+}
+
+func testUserValidation(person:[String: Any]){
+    //Si alguien puede crear variable surname... la sentencia sigue despues de las llaves{}
+    //de lo contrario entra al else{...}
+    guard let surname = person["surname"] else {
+        print("El apellido es desconocido")
+        return
+    }
+    //aqui existe surname
+    print(surname)
+    
+    guard let age = person["age"] else {
+        print("El apellido es desconocido")
+        return
+    }
+    //aqui existe surname
+    print("La edad de la persona es \(age)")
+}
+
+people["surname"] = "Ricks"
+testUserValidation(person: people)
+
+
+
+///Available en API: Manejo de versiones
+if #available(iOS 12, macOS 10.12, *){
+    //Ejecutar las acciones a lo iOS12+, a lo macOS10.12+
+} else{
+    //Mantener el codigo viejo con versiones anteriores de iOS, macOS...
+}

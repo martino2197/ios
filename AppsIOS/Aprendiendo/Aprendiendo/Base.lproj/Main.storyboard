@@ -39,6 +39,9 @@
                                 <state key="normal" title="Iniciar Sesion">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="K5g-n5-xPP" kind="presentation" modalPresentationStyle="fullScreen" id="tbq-Pl-VsV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dn1-MD-pJU">
                                 <rect key="frame" x="186" y="774" width="43" height="30"/>
@@ -69,6 +72,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="112.5"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="Fi5-E1-NwE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="K5g-n5-xPP" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oFx-kU-4Uf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1841" y="92"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="zAM-hs-o6V">

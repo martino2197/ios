@@ -40,7 +40,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="K5g-n5-xPP" kind="presentation" modalPresentationStyle="fullScreen" id="tbq-Pl-VsV"/>
+                                    <action selector="loginButtonAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Ee-rw-6KP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dn1-MD-pJU">
@@ -68,6 +68,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Inicio" id="8o9-LY-4un"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="GY5-xe-eYd" id="k73-ct-quH"/>
+                        <outlet property="passwordTextFIeld" destination="1iD-8U-4t4" id="M4Q-sO-KvV"/>
+                        <segue destination="K5g-n5-xPP" kind="presentation" identifier="home_segue" modalPresentationStyle="fullScreen" id="nHm-Qi-0jr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

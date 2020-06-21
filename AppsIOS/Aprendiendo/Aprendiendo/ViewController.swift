@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextFIeld: UITextField!
     
+    @IBOutlet weak var emailSwitch: UISwitch!
+    
     @IBAction func loginButtonAction() {
         //1. Obtener los valores de los TextField
         let email = emailTextField.text
@@ -25,6 +27,13 @@ class ViewController: UIViewController {
              el identificador del Segue que va al Storyboard Reference el cual
              conecta con Home.storyboard
              */
+            
+            if emailSwitch.isOn{
+                //De esta manera guardamos valores con llave y valor en los UserDafaults.
+                storage.set(email, forKey: emailkey)
+            } else {
+                storage.removeObject(forKey: emailkey)
+            }
             performSegue(withIdentifier: "home_segue", sender: nil)
         } else {
             print("contraseña o cuenta invalida")
@@ -32,9 +41,21 @@ class ViewController: UIViewController {
         
     }
 
+    private let emailkey = "email-key"
+    //La linea de abajo nos va a dar acceso a los valores guardados en el telefono (dentro de la aplicacion)
+    private let storage = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        //De esta manera buscamos un string en los UserDefaults y lo asignamos
+        if let storedEmail = storage.string(forKey: emailkey){
+            emailTextField.text = storedEmail
+            emailSwitch.isOn = true
+        } else {
+            emailSwitch.isOn = false
+        }
     }
 
 

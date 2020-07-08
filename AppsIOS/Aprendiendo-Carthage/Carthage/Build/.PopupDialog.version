@@ -1,0 +1,11 @@
+{
+  "commitish" : "1.1.1",
+  "iOS" : [
+    {
+      "hash" : "c2fd47677f8b96d5e69c1883e446eff0ee43035d049e67e50bcfafad74308844",
+      "name" : "PopupDialog",
+      "linking" : "dynamic",
+      "swiftToolchainVersion" : "5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)"
+    }
+  ]
+}

@@ -1,1 +1,1 @@
-# Material complementario del curso IOS-2020 Proteco
+# Material complementario del curso para becarios Proteco IOS-2020.
